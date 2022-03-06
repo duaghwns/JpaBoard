@@ -6,6 +6,9 @@
 </head>
 <body>
 <h1>Index Page</h1>
+<div th:if="${session.user != null}">
+    <h2 th:text="${session.user.getName()}님 반갑습니다."></h2>
+</div>
 <ul>
     <li><a href="board/write">글쓰기</a></li>
     <li><a href="sign">회원가입</a></li>

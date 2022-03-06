@@ -40,6 +40,7 @@ public class MemberController {
     @PostMapping("/login")
     public String login(MemberDto member, HttpServletRequest request){
         MemberDto loginUser = memberService.login(member);
+        System.out.println(loginUser);
         if(loginUser!=null){
             HttpSession session = request.getSession();
             session.setAttribute("user", loginUser);
