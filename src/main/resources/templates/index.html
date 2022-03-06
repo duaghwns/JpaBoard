@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<h1>Index Page</h1>
+<ul>
+    <li><a href="board/write">글쓰기</a></li>
+</ul>
+
+<div>
+    <table>
+        <tr>
+            <td>글번호</td>
+            <td>제목</td>
+            <td>작성자</td>
+            <td>날짜</td>
+        </tr>
+        <tr th:each="list : ${board}">
+            <td th:text="${list.getId()}"></td>
+            <td th:text="${list.getTitle()}"></td>
+            <td th:text="${list.author.getName()}"></td>
+            <td th:text="${list.getRegDate()}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
