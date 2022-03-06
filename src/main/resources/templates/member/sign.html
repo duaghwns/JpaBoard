@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Sign Page</h1>
+    <div>
+        <form action="sign" method="post">
+            <table border="1px solid black">
+                <tr>
+                    <td>아이디</td>
+                    <td><input type="text" name="id"></td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td><input type="password" name="password"></td>
+                </tr>
+                <tr>
+                    <td>이름</td>
+                    <td><input type="text" name="name"></td>
+                </tr>
+                <tr>
+                    <td>나이</td>
+                    <td><input type="text" name="age"></td>
+                </tr>
+            </table>
+            <button type="submit">가입하기</button>
+        </form>
+    </div>
+</body>
+</html>
