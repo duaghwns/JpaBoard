@@ -41,6 +41,7 @@ public class MemberController {
     public String login(MemberDto member, HttpServletRequest request){
         MemberDto loginUser = memberService.login(member);
         System.out.println(loginUser);
+        System.out.println(member);
         if(loginUser!=null){
             HttpSession session = request.getSession();
             session.setAttribute("user", loginUser);
