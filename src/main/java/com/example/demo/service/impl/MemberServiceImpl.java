@@ -24,12 +24,11 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public MemberDto login(MemberDto member) {
-        Member findMember = memberRepository.findByUserIdAndPassword(member.getId(),member.getPassword());
-
-        if(findMember!=null){
-            member.setId(findMember.getId());
-            return member;
-        }
+//        Member findMember = memberRepository.findByUserIdAndPassword(member.getId(),member.getPassword());
+//        if(findMember!=null){
+//            member.setId(findMember.getId());
+//            return member;
+//        }
         return null;
     }
 }
