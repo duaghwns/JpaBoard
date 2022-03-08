@@ -7,9 +7,9 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
-      properties:
-        hibernate:
-          show_sql:true
-          format_sql:true
+#      properties:
+#        hibernate:
+#          show_sql:true
+#          format_sql:true
 server:
   port: 8099
