@@ -20,6 +20,7 @@ public class MemberServiceImpl implements MemberService {
         memberRepository.save(entity);
         member.setSeq(entity.getSeq());
         return member;
+
     }
 
     @Override
