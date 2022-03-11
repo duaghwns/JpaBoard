@@ -28,6 +28,8 @@ public class BoardServiceImpl implements BoardService {
         return result;
     }
 
+
+
     @Override
     public void save(BoardDto board) {
         Board entity = Board.builder()
@@ -46,8 +48,8 @@ public class BoardServiceImpl implements BoardService {
 
     @Override
     public void modify(BoardDto board) {
-        boardRepository.findById(board.getId());
-        Board entity = board.dtoToEntity();
+        Board entity = boardRepository.findById(board.getId()).get();
+
         boardRepository.save(entity);
 
     }
