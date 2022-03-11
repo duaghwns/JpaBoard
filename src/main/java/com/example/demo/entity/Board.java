@@ -23,6 +23,7 @@ public class Board {
     @JoinColumn(name = "author")
     private Member author;
     private LocalDateTime regDate;
+    private LocalDateTime modDate;
 
 
 
@@ -40,6 +41,7 @@ public class Board {
                 .content(content)
                 .author(memberDto)
                 .regDate(regDate)
+                .modDate(modDate)
                 .build();
     }
 }

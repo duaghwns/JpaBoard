@@ -1,6 +1,7 @@
 package com.example.demo.service.impl;
 
 import com.example.demo.dto.BoardDto;
+import com.example.demo.dto.MemberDto;
 import com.example.demo.entity.Board;
 import com.example.demo.entity.Member;
 import com.example.demo.repository.BoardRepository;
@@ -30,21 +31,24 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public void save(BoardDto board) {
         Board entity = Board.builder()
-                .content(board.getContent())
-                .regDate(LocalDateTime.now())
                 .title(board.getTitle())
+                .content(board.getContent())
                 .author(new Member(1L, "ho1234" ,"염호준",27,"hojoon"))
+                .regDate(LocalDateTime.now())
                 .build();
         boardRepository.save(entity);
     }
 
     @Override
     public void delete(Long id) {
-
+        boardRepository.deleteById(id);
     }
 
     @Override
     public void modify(BoardDto board) {
+        boardRepository.findById(board.getId());
+        Board entity = board.dtoToEntity();
+        boardRepository.save(entity);
 
     }
 
